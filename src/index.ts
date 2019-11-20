@@ -1,5 +1,5 @@
 import { value } from "./helpers";
 
-const x: object = value;
+const xa: object = value;
 
-console.log(x);
+console.log(xa);
