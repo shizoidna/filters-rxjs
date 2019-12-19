@@ -1,10 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Hello, world!</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
-<h1>mvnvnv</h1>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col py-2">
+      <div class="form-inline flex-nowrap mb-2 mx-sm-3">
+        <label for="select-style">Style</label>
+        <select id="select-style" class="form-control ml-2">
+          <option value="" selected>-</option>
+          <option value="hi-tech">Hi-Tech</option>
+          <option value="traditional">Traditional</option>
+          <option value="modern">Modern</option>
+          <option value="art-deco">Art-Deco</option>
+        </select>
+        <button class="btn btn-outline-secondary ml-2" id="btn-reset-style" type="button">Clear</button>
+      </div>
+    </div>
+    <div class="col py-2">
+      <div class="form-inline flex-nowrap mb-2 mx-sm-3">
+        <label for="select-material">Material</label>
+        <select id="select-material" class="form-control ml-2">
+          <option value="" selected>-</option>
+          <option value="acrylic">Acrylic</option>
+          <option value="polyester">Polyester</option>
+          <option value="wool">Wool</option>
+          <option value="leather">Leather</option>
+        </select>
+        <button class="btn btn-outline-secondary ml-2" id="btn-reset-material" type="button">Clear</button>
+      </div>
+    </div>
+    <div class="col py-2">
+      <div class="form-inline flex-nowrap mb-2 mx-sm-3">
+        <label for="select-color">Color</label>
+        <select id="select-color" class="form-control ml-2">
+          <option value="" selected>-</option>
+          <option value="black">Black</option>
+          <option value="brown">Brown</option>
+          <option value="white">White</option>
+          <option value="red">Red</option>
+        </select>
+        <button class="btn btn-outline-secondary ml-2" id="btn-reset-color" type="button">Clear</button>
+      </div>
+    </div>
+    <div class="col py-2">
+      <div class="form-inline flex-nowrap mb-2 mx-sm-3">
+        <label for="select-origin">Origin</label>
+        <select id="select-origin" class="form-control ml-2">
+          <option value="" selected>-</option>
+          <option value="china">China</option>
+          <option value="italy">Italy</option>
+          <option value="japan">Japan</option>
+          <option value="sweden">Sweden</option>
+        </select>
+        <button class="btn btn-outline-secondary ml-2" id="btn-reset-origin" type="button">Clear</button>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col py-2">
+      <div class="d-flex justify-content-center">
+        <button type="button" class="btn btn-secondary btn-reset-all mb-2 mx-sm-3" id="btn-reset-all">Reset All
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col py-2">
+      <div class="d-flex justify-content-center">
+        <ul id="list">
+
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
 </body>
 </html>

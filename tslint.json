@@ -6,7 +6,18 @@
     "jsRules": {},
     "rules": {
       "object-literal-sort-keys": false,
-      "no-console": false
+      "no-console": false,
+      "no-submodule-imports": false,
+      "quotemark": [true, "single"],
+      "completed-docs": false,
+      "only-arrow-functions": false,
+      "member-ordering": false,
+      "file-name-casing": [true, "kebab-case"],
+      "no-inferrable-types": false,
+      "interface-name": [true, "never-prefix"],
+      "max-file-line-count": false,
+      "increment-decrement": false,
+      "prefer-for-of": false
     },
     "rulesDirectory": []
 }

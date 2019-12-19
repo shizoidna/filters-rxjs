@@ -4,9 +4,12 @@
   "scripts": {
     "prebuild": "del-cli dist",
     "build": "webpack --mode production",
-    "start": "webpack-dev-server --mode development --open"
+    "start": "webpack-dev-server --mode development --open",
+    "lint": "tslint -p tsconfig.json"
   },
-  "dependencies": {},
+  "dependencies": {
+    "rxjs": "^6.5.3"
+  },
   "devDependencies": {
     "css-loader": "^3.2.0",
     "del-cli": "^3.0.0",
@@ -14,6 +17,7 @@
     "mini-css-extract-plugin": "^0.8.0",
     "node-sass": "^4.13.0",
     "sass-loader": "^8.0.0",
+    "stylelint": "^12.0.0",
     "ts-loader": "^6.2.1",
     "tslint": "^5.20.1",
     "typescript": "^3.7.2",
