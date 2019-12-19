@@ -65,8 +65,10 @@ function renderListItem(item: Sofa, list: HTMLElement): void {
 
 function renderList(amountItems: Sofa[]): void {
   const list: HTMLElement | null = document.getElementById('list');
+  clearList(list);
 
   if (list !== null) {
+    console.log('BEFO RENDER', amountItems);
     amountItems.forEach((item: Sofa) => renderListItem(item, list));
   } else {
     throw new Error('Chosen element with such id does not exist');
@@ -80,46 +82,6 @@ function clearList(list: HTMLElement | null): void {
   } else {
     throw new Error('Chosen element with such id does not exist');
   }
-}
-
-function filterStyle(sofaData: Sofa[], state: FilterState): Sofa[] {
-  const list: HTMLElement | null = document.getElementById('list');
-  clearList(list);
-  const result: Sofa[] = sofaData
-    .filter((element: Sofa) => state.style === element.style || state.style === '');
-  renderList(result);
-
-  return result;
-}
-
-function filterMaterial(sofaData: Sofa[], state: FilterState): Sofa[] {
-  const list: HTMLElement | null = document.getElementById('list');
-  clearList(list);
-  const result: Sofa[] = sofaData
-    .filter((element: Sofa) => state.material === element.material || state.material === '');
-  renderList(result);
-
-  return result;
-}
-
-function filterColor(sofaData: Sofa[], state: FilterState): Sofa[] {
-  const list: HTMLElement | null = document.getElementById('list');
-  clearList(list);
-  const result: Sofa[] = sofaData
-    .filter((element: Sofa) => state.color === element.color || state.color === '');
-  renderList(result);
-
-  return result;
-}
-
-function filterOrigin(sofaData: Sofa[], state: FilterState): Sofa[] {
-  const list: HTMLElement | null = document.getElementById('list');
-  clearList(list);
-  const result: Sofa[] = sofaData
-    .filter((element: Sofa) => state.origin === element.origin || state.origin === '');
-  renderList(result);
-
-  return result;
 }
 
 function selectElement(id: string, valueToSelect: string): void {
@@ -161,7 +123,6 @@ filterEvents$
     const previousState: FilterState = stateSubject.getValue();
     const modifiedState: FilterState = {...previousState, ...event};
     stateSubject.next(modifiedState);
-    renderList([]);
   });
 
 const makeStreamWithColor$: Observable<string> = stateSubject
@@ -206,9 +167,11 @@ makeStreamWithMaterial$
 
 stateSubject
   .subscribe((state: FilterState) => {
-    console.log('filter has changed');
-    const styleFilter: Sofa[] = filterStyle(data, state);
-    const materialFilter: Sofa[] = filterMaterial(styleFilter, state);
-    const colorFilter: Sofa[] = filterColor(materialFilter, state);
-    filterOrigin(colorFilter, state);
+    const result: Sofa[] = data
+    .filter((element: Sofa) => state.style === element.style || state.style === '')
+    .filter((element: Sofa) => state.material === element.material || state.material === '')
+    .filter((element: Sofa) => state.color === element.color || state.color === '')
+    .filter((element: Sofa) => state.origin === element.origin || state.origin === '');
+
+    renderList(result);
   });
