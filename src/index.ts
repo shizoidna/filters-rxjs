@@ -68,12 +68,10 @@ function renderList(amountItems: Sofa[]): void {
   clearList(list);
 
   if (list !== null) {
-    console.log('BEFO RENDER', amountItems);
     amountItems.forEach((item: Sofa) => renderListItem(item, list));
   } else {
     throw new Error('Chosen element with such id does not exist');
   }
-  console.log('rendered');
 }
 
 function clearList(list: HTMLElement | null): void {
